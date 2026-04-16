@@ -5,7 +5,6 @@ import pages.components.CalendarComponent;
 
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -29,8 +28,8 @@ public class PracticeFormPage {
     private final SelenideElement stateContainer = $("#stateCity-wrapper");
     private final SelenideElement citySelect = $("#city");
     private final SelenideElement submit = $("#submit");
-    private final SelenideElement resultModal = $("#resultModal");
-    private final SelenideElement resultTable = $("#resultBody");
+//    private final SelenideElement resultModal = $("#resultModal");
+//    private final SelenideElement resultTable = $("#resultBody");
     private final SelenideElement errorText = $("#formError");
 
 
@@ -136,23 +135,6 @@ public class PracticeFormPage {
         return this;
     }
 
-    public PracticeFormPage checkResultModalAppearance() {
-        resultModal.shouldHave(visible);
-
-        return this;
-    }
-
-    public PracticeFormPage checkResultModalTitle(String value) {
-        resultModal.find(byId("example-modal-sizes-title-lg")).shouldHave(text(value));
-
-        return this;
-    }
-
-    public PracticeFormPage checkResultField(String fieldName, String fieldValue) {
-        resultTable.$$("tr").findBy(text(fieldName)).shouldHave(text(fieldValue));
-
-        return this;
-    }
 
     public PracticeFormPage checkFormErrorText(String value) {
         errorText.shouldHave(text(value));

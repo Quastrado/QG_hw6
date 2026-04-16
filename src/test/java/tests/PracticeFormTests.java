@@ -2,12 +2,14 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
+import pages.components.ResultModalComponent;
 
 
 import static tests.testdata.TestDataPracticeForm.*;
 
 public class PracticeFormTests extends TestBase {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
+    ResultModalComponent resultModalComponent = new ResultModalComponent();
 
    @Test // Заполнение всех полей формы
     void successfulFormCompletionTest(){
@@ -26,8 +28,9 @@ public class PracticeFormTests extends TestBase {
                 .typeCurrentAddress(currentAddress)
                 .selectState(state)
                 .selectCity(city)
-                .submitForm()
-                .checkResultModalAppearance()
+                .submitForm();
+
+    resultModalComponent.checkResultModalAppearance()
                 .checkResultModalTitle(successSubmitText)
                 .checkResultField("Student Name", firstName + " " + secondName)
                 .checkResultField("Student Email", userEmail)
@@ -52,8 +55,9 @@ public class PracticeFormTests extends TestBase {
                 .selectGender(genderTextValue)
                 .typeNumber(userNumber)
                 .setDateOfBirth(dateDay, dateMonth, dateYear)
-                .submitForm()
-                .checkResultModalAppearance()
+                .submitForm();
+
+        resultModalComponent.checkResultModalAppearance()
                 .checkResultModalTitle(successSubmitText);
     }
 
