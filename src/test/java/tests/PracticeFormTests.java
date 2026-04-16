@@ -3,12 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 
-import java.io.File;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byTagName;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 import static tests.testdata.TestDataPracticeForm.*;
 
 public class PracticeFormTests extends TestBase {
@@ -18,6 +13,7 @@ public class PracticeFormTests extends TestBase {
     void successfulFormCompletionTest(){
         practiceFormPage.openPage()
                 .bannerClose()
+                .checkSubtitle(subtitleText)
                 .typeFirstName(firstName)
                 .typeLastName(secondName)
                 .typeEmail(userEmail)
@@ -49,6 +45,7 @@ public class PracticeFormTests extends TestBase {
     void requiredFieldsOnlyTest() {
         practiceFormPage.openPage()
                 .bannerClose()
+                .checkSubtitle(subtitleText)
                 .typeFirstName(firstName)
                 .typeLastName(secondName)
                 .typeEmail(userEmail)
