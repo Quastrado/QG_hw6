@@ -1,10 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByText;
 import pages.components.CalendarComponent;
 
-import java.util.Calendar;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -14,26 +12,26 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormPage {
 
-    private SelenideElement banner = $("#fixedban");
-    private SelenideElement practiceFormWrapper = $(".practice-form-wrapper");
-    private SelenideElement firstNameInput = $("#firstName");
-    private SelenideElement lastNameInput = $("#lastName");
-    private SelenideElement emailInput = $("#userEmail");
-    private SelenideElement genderBar = $("#genterWrapper");
-    private SelenideElement numberInput = $("#userNumber");
-    private SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
-    private SelenideElement subjectsInput = $("#subjectsInput");
-    private SelenideElement subjectsDropdown = $("#subjectsDropdown");
-    private SelenideElement hobbiesWrapper = $("#hobbiesWrapper");
-    private SelenideElement pictureUploader = $("#uploadPicture");
-    private SelenideElement currentAddressInput = $("#currentAddress");
-    private SelenideElement stateSelect = $("#state");
-    private SelenideElement stateContainer = $("#stateCity-wrapper");
-    private SelenideElement citySelect = $("#city");
-    private SelenideElement submit = $("#submit");
-    private SelenideElement resultModal = $("#resultModal");
-    private SelenideElement resultTable = $("#resultBody");
-    private SelenideElement errorText = $("#formError");
+    private final SelenideElement banner = $("#fixedban");
+    private final SelenideElement practiceFormWrapper = $(".practice-form-wrapper");
+    private final SelenideElement firstNameInput = $("#firstName");
+    private final SelenideElement lastNameInput = $("#lastName");
+    private final SelenideElement emailInput = $("#userEmail");
+    private final SelenideElement genderBar = $("#genterWrapper");
+    private final SelenideElement numberInput = $("#userNumber");
+    private final SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
+    private final SelenideElement subjectsInput = $("#subjectsInput");
+    private final SelenideElement subjectsDropdown = $("#subjectsDropdown");
+    private final SelenideElement hobbiesWrapper = $("#hobbiesWrapper");
+    private final SelenideElement pictureUploader = $("#uploadPicture");
+    private final SelenideElement currentAddressInput = $("#currentAddress");
+    private final SelenideElement stateSelect = $("#state");
+    private final SelenideElement stateContainer = $("#stateCity-wrapper");
+    private final SelenideElement citySelect = $("#city");
+    private final SelenideElement submit = $("#submit");
+    private final SelenideElement resultModal = $("#resultModal");
+    private final SelenideElement resultTable = $("#resultBody");
+    private final SelenideElement errorText = $("#formError");
 
 
 
@@ -145,7 +143,7 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage checkResultModalTitle(String value) {
-        resultModal.$(byText(value));
+        resultModal.find(byId("example-modal-sizes-title-lg")).shouldHave(text(value));
 
         return this;
     }
