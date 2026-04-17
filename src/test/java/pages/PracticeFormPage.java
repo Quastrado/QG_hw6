@@ -28,8 +28,6 @@ public class PracticeFormPage {
     private final SelenideElement stateContainer = $("#stateCity-wrapper");
     private final SelenideElement citySelect = $("#city");
     private final SelenideElement submit = $("#submit");
-//    private final SelenideElement resultModal = $("#resultModal");
-//    private final SelenideElement resultTable = $("#resultBody");
     private final SelenideElement errorText = $("#formError");
 
 
